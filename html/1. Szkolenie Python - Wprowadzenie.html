@@ -1,0 +1,1490 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1.Wprowadzenie do Pythona &#8212; Szkolenie Python 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1. Szkolenie Python - Wprowadzenie';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Funkcje wbudowane, zmienne i typy danych" href="2.%20Szkolenie%20Python%20-%20funkcje%20wbudowane%2C%20zmienne%20i%20typy%20danych.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    1.Wprowadzenie do Pythona
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2.%20Szkolenie%20Python%20-%20funkcje%20wbudowane%2C%20zmienne%20i%20typy%20danych.html">2. Funkcje wbudowane, zmienne i typy danych</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="3.%20Szkolenie%20Python%20-%20z%C5%82o%C5%BCone%20typy%20danych.html">3. Złożone typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Szkolenie%20Python%20-%20kontrola%20przep%C5%82ywu.html">4. Kontrola przepływu</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="5.%20Szkolenie%20Python%20-%20funkcje%2C%20definicja%20funkcji%2C%20wyj%C4%85tki.html">5. Funkcje, definicja funkcji, wyjątki</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.%20Szkolenie%20Python%20-%20wczytywanie%20i%20zapisywanie%20plik%C3%B3w%2C%20operacje%20na%20strukutrze%20folder%C3%B3w%2C%20formatowanie%20tekstu.html">6. Wczytywanie i zapisywanie plików, operacje na strukutrze folderów, formatowanie tekstu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.%20Szkolenie%20Python%20-%20podstawy%20analizy%20danych%20tabelarycznych.html">7. Podstawy analiz danych tabelarycznych</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F1. Szkolenie Python - Wprowadzenie.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/1. Szkolenie Python - Wprowadzenie.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1.Wprowadzenie do Pythona</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.Wprowadzenie do Pythona</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wady-i-zalety-pythona">Wady i zalety Pythona</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zalety">Zalety</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dlaczego-o-tym-mowimy">Dlaczego o tym mówimy?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacja-pythona-na-komputerze">Instalacja Pythona na komputerze</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-po-instalacji-jak-uzywac-pythona">Co po instalacji - jak używać Pythona?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda-navigator">Anaconda Navigator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#srodowisko">Środowisko</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacja-rozszerzen">Instalacja rozszerzeń</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">PyCharm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder">Spyder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-wybrac">Co wybrać</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="wprowadzenie-do-pythona">
+<h1>1.Wprowadzenie do Pythona<a class="headerlink" href="#wprowadzenie-do-pythona" title="Permalink to this heading">#</a></h1>
+<center>
+<h1>Python - kurs wprowadzający </h1>
+</center>    
+<p>Prowadzący kurs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dr hab. inż. Paweł Bogusławski
+dr inż. Kamil Smolak
+dr inż. Adam Michalski
+mgr inż. Barbara Hordyniec
+mgr inż. Natalia Wielgocka
+</pre></div>
+</div>
+<p>Daty: 16.11.2023 - 17.11.2023</p>
+<p>Miejsce: Uniwersytet Przyrodniczy we Wrocławiu, Wrocław</p>
+<p>Plan kursu:</p>
+<p>Kurs przez dwa dni skupi się głównie na podstawach programowania w języku Python. Kurs przede wszystkim skupia się na ćwiczeniach praktycznych. Każdy wprowadzany element wiedzy opatrzony jest przykładami i zadaniami do wykonania. Ponadto, udostępniamy zestaw zadań do wykonania w domu po kursie w celu treningu własnego i szlifowania umiejętności.</p>
+<p>Kurs składa się z:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Wprowadzenia teoretycznego
+Sposób instalacji środowiska
+Środowiska programistyczne
+Typy danych i zmienne
+Operatory
+Komentowanie kodu
+Biblioteki rozszerzające funkcjonalność
+Pisanie funkcji
+Kontrola przepływu w kodzie
+Pętle
+Wyjątki i błędy w kodzie - jak je czytać
+Pliki - wczytywanie i zapisywanie
+Biblioteki, które mogą przydać się podczas pracy z danymi przestrzennymi
+</pre></div>
+</div>
+<p>Co po krusie?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Wykonywanie przekazanych przez nas zadań oraz materiałów
+Wykonanie interaktywnych kursów online, np. codeacademy
+Trening poprzez rywalizację w rozwiązywaniu problemów programistycznych: leetcode.com lub hackerrank.com
+</pre></div>
+</div>
+<center>
+<h2>O języku Python i o co w nim chodzi </h2>
+</center>
+<p>Python to prosty i potężny język programowania. Jest prosty w nauce i pozwala skupić się na problemie, nie problemie programowania. To język wysokiego poziomu.</p>
+<p>Oficjalne wprowadzenie do Pythona brzmi:
+<font color="brown"></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python jest łatwym w nauce, poteżnym językiem programowania. Posiada wysokopoziomowe struktury danych i proste, ale efektywne podejście do modelowania obiektowego. Elegancka struktura (syntax) Pythona i dynamiczne zmienne sprawiają, że jest idealnym językiem do skryptowania i szybkiego wdrażania rozwiązań w wielu dziedzinach i na wielu platformach.
+</pre></div>
+</div>
+</font><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">python-logo-master-v3-TM.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\python-logo-master-v3-TM.png&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\python-logo-master-v3-TM.png&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<h2>Nazwa</h2>
+<p>Język stworzył Guido van Rossum. Nazwa pchodzi od nazwy brytyjskiej grupy “Monty Python”.</p>
+<h2> Darmowy Open Source</h2>
+<p>Python jest przykładem idei FLOSS (Free/Libre and Open Source Software). Dopuszczalne zatem jst rozprzestrzenianie kopii oprogramowania, czytanie jego kodu źródłowego, dokonywanie w nim zmian i uzywanie jego fragmentów w naszym orpogramowaniu.</p>
+<p><b>Dzięki temu jest on stale ulepszany </b></p>
+<h2> Język wysokiego poziomu </h2>
+<p>Nigdy nie ma potrzeby martwienia się problemami typowymi dla języków niskiego poziomu jak:</p>
+<ul>
+    <li>Zarządzanie pamięcią</li>
+    <li>Mapowanie typów zmiennych</li>
+    <li>Alokacja pamięci</li>
+</ul><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">python-and-zope-an-introduction-may-2004-3-638.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\python-and-zope-an-introduction-may-2004-3-638.jpg&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\python-and-zope-an-introduction-may-2004-3-638.jpg&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="wady-i-zalety-pythona">
+<h2>Wady i zalety Pythona<a class="headerlink" href="#wady-i-zalety-pythona" title="Permalink to this heading">#</a></h2>
+<h3> Wady </h3>
+<p>Największą i najczęściej wymienianą wadą Pythona jest jego szybkość i wykorzystanie pamięci. <b> Python jest wolny i wymaga sporych zasobów </b></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">most-efficient.jpg&quot;</span><span class="p">)</span>
+<span class="c1">#Źródło: Energy Efficiency across Programming Languages, SLE’17</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\most-efficient.jpg&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\most-efficient.jpg&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="zalety">
+<h3>Zalety<a class="headerlink" href="#zalety" title="Permalink to this heading">#</a></h3>
+<p>Największą zaletą Pythona jest jego <b> popularność </b>. Ta zaleta pozwala na pokonanie wszystkich jego wad - również tych związanych z jego powolnością.</p>
+<p>Python ma niepodważalne zalety w postaci oszczędności kodu, łatwości zrozumienia, automatycznego zarządzania pamięcią, przenoszalności i czytelności. Dlatego też został wybrany przez ogromną liczbę programistów i deweloperów blibliotek.</p>
+<p>Deweloperzy bibliotek napisali odpowiednie narzędzia, które umożliwiają wykonywanie wszystkiego co potrafią konkurencyjne języki. Dzięki temu, Python to świetne narzędzie <b> do wszystkiego </b>.</p>
+<h2> Przenoszenie kodu </h2>
+<p>W związku z jego otwartą naturą, kod może zostać uruchomiony na wielu platformach, pod warunkiem że nie wykorzystamy w kodzie elementów typowych dla danej platformy.</p>
+<p>Python działa na takich platformach jak: GNU/Linux, Windows, FreeBSD, Macintosh, Solaris, OS/2, Amiga, AROS, AS/400, PlayStation itd…</p>
+<h2> Jest językiem interpretowanym </h2>
+<p>Wyróżniamy dwa typy języków:</p>
+<ul>
+    <li> Kompilowane </li>
+    <li> Interpretowane </li>
+</ul>
+<p>Języki programowania kompilowane (C/C++) są kowertowane do języka źródłowego (kodu maszynowego), który jest językiem bezpośrednio rozumianym przez komputer (0101001001010) - kodu binarnego.</p>
+<p>Języki interpretowane, jak Python, nie są kompilowane do kodu binarnego. Kod jest po prostu uruchamiany z kodu źródłowego i intrpretowany za pomocą wbudowanego interpretera. Python konwertuje kod źródłowy do <b>kodu pośredniego</b>, który następnie jest tłumaczony do kodu maszynowego.</p>
+<p><b> Dzięki temu nie musimy kompilować naszego kodu </b></p>
+<h2> Jest językiem imperatywnym </h2>
+<p>Języki możemy podzielić również na:
+<ul>
+<li>Deklaratywne</li>
+<li>Imperatywne</li>
+</ul></p>
+<p>Języki deklaratywne polegają na przedstawieniu warunków, które musi przedstawiać końcowe rozwiązanie. Brak jest opisu sekwencji kroków potrzebnych do otrzymania tego rezultatu.</p>
+<p>Języki imperatywne - wręcz przeciwnie, opisywana jest sekwencja kroków, które należy podjąć by osiągnąć zamierzany rezultat. Warunki rezultatu końcowego nie są opisywane.</p>
+<h2> Jest językiem obiektowym </h2>
+<p>Języki programowania można również podzielić na:</p>
+<ul>
+    <li> Strukturalne </li>
+    <li> Obiektowe </li>
+</ul>
+<p>W programowaniu strukturalnym dzielimy funkcjonalności na moduły (podprogramy).</p>
+<p>W programowaniu obiektowym tworzymy <b> obiekty </b>, każdy z nich ma własne działania (metody) oraz właściwości (atrybuty). Z założenia, mają reprezentować elementy świata rzeczywistego.</p>
+<p>W Pythonie można pisać kod w obu z tych podejść, choć jest on nastawiony na programowanie obiektowe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">bell_fig5.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\bell_fig5.jpg&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\bell_fig5.jpg&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dlaczego-o-tym-mowimy">
+<h2>Dlaczego o tym mówimy?<a class="headerlink" href="#dlaczego-o-tym-mowimy" title="Permalink to this heading">#</a></h2>
+<p>Biblioteki programistyczne Python dostępne w ArcGIS czy QGIS są oparte na tej samej zasadzie. Składają się z obiektów, z którymi komunikujemy się i wykorzystujemy ich metody i właściwości.</p>
+<p>Struktura typowej biblioteki, takiej jak arcpy w ArcGIS ma następującą hierarchię:</p>
+<ol>
+  <li>Biblioteka programistyczna</li>
+  <li>Moduły</li>
+  <li>Klasy</li>
+</ol>
+<p>Klasy są właśnie tymi “obiektami” o których była mowa. One reprezentują elementy oprogramowania i w ten sposób komunikujemy się z oprogramowaniem.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Klasa może na przykład reprezentować obiekty wektorowe na mapie.
+</pre></div>
+</div>
+<center> <h1> Instalacja </h1> </center></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="instalacja-pythona-na-komputerze">
+<h1>Instalacja Pythona na komputerze<a class="headerlink" href="#instalacja-pythona-na-komputerze" title="Permalink to this heading">#</a></h1>
+<p>Jeśli chcemy używać Pythona w ArcGIS lub QGIS - już jest tam zainstalowany i nie ma potrzeby niczego robić.</p>
+<p>Jeśli jednak chcemy go używać poza tym oprogramowaniem, musimy go zainstalować.
+Instalacja jest prosta.</p>
+<p>Najpierw należy Pythona pobrać. Możemy sięgnąć po:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Instalator bazowy ze strony Pythona: https://www.python.org/
+    Paczkę wszystko-w-jednym Anaconda: https://www.anaconda.com/ (zalecamy)
+</pre></div>
+</div>
+<section id="anaconda">
+<h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading">#</a></h2>
+<p>Rdzeń języka plus standardowe biblioteki stanowi zaledwie małą część tego co do tej pory zdołała utworzyć społeczność Pythona. Anaconda to dystrybucja Pythona zawierająca ważne biblioteki nienależące do standardu wraz z mechanizmem conda umożliwiającym instalację kolejnych.</p>
+<p>Instalacja Anacondy: <a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a>
+Rekomendujemy zaisntalowanie najnowszej wersji: 3.x</p>
+<p>Wystarczy pobrać wersję dla naszego systemu operacyjnego i zainstalować jak każde inne oprogramowanie na komputerze. Jedyne co możemy chcieć zmodyfikować to ścieżka instalacji oraz poniższe opcje:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">anaconda.PNG&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\anaconda.PNG&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\anaconda.PNG&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zaznaczenie opcji “Add Anaconda3 to my PATH…” spowoduje że będziemy mieli dostęp do Pythona w każdym miejscu systemu. <b> Nie zalecamy zaznaczania tej opcji </b> - tylko dla odważnych</p>
+</section>
+<section id="co-po-instalacji-jak-uzywac-pythona">
+<h2>Co po instalacji - jak używać Pythona?<a class="headerlink" href="#co-po-instalacji-jak-uzywac-pythona" title="Permalink to this heading">#</a></h2>
+<p>Zainstalują nam się dwie ważne funkcjonalności:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Anaconda Navigator - graficzny przewodnik po funkcjonalnościach
+Anaconda Prompt - linia komend o takich samych funkcjonalnościach
+</pre></div>
+</div>
+<section id="anaconda-navigator">
+<h3>Anaconda Navigator<a class="headerlink" href="#anaconda-navigator" title="Permalink to this heading">#</a></h3>
+<p>To graficzne narzędzi obsługi Anacondy. Po uruchomieniu pojawia się takie okno</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">navigator1.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\navigator1.png&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\navigator1.png&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stąd możemy uruchomić zainstalowane już aplikacje, takie jak środowiska deweloperskie (Jupyter Notebook, Spyder, PyCharm - o tym za chwile).</p>
+<p>W pasku na górze wybieramy, w którym środowisku chcemy je uruchomić (All applications on base(root) na obrazie).</p>
+<section id="srodowisko">
+<h4>Środowisko<a class="headerlink" href="#srodowisko" title="Permalink to this heading">#</a></h4>
+<p>Środowisko należy traktować jako osobną instalację Pythona, które można rozdzielać - co zwykle ma sens podczas kiedy różne rozszerzenia do funkcjonalności Pythona mają konflikt. Do pracy w zupełności wystarczy  gotowe od razu po uruchomieniu środowisko główne <i> base (root) </i></p>
+</section>
+</section>
+<section id="instalacja-rozszerzen">
+<h3>Instalacja rozszerzeń<a class="headerlink" href="#instalacja-rozszerzen" title="Permalink to this heading">#</a></h3>
+<p>Często jednak zachodzi potrzeba instalacji <b> rozszerzeń </b> funkcjonalności Pythona. Te rozszerzenia nazywamy <b> bibliotekami programistycznymi </b> (arcpy jest właśnie taką biblioteką). Aby je zainstalować przechodzimy do zakładki <b> Environments </b> z lewego menu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">navigator2.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\navigator2.png&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\navigator2.png&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Domyślnie mamy tutaj jedno środowisko <i> base(root) </i>. Na obrazie znajduje się jeszcze drugie środowisko o nazwie <i> HuMobiDeep </i>.</p>
+<p>Panel po prawej stronie to lista bibliotek które są zainstalowane w danym środowisku. Aby zainstalować nową, po prostu wpisujemy jej nazwę w wyszukiwanie (prawy górny róg) i zmieniamy z listy rozwijalnej <i> Installed -&gt; Not installed </i>.</p>
+<p>Gdy pojawią nam się wyniki, zaznaczamy bibliotekę którą chcemy zainstalować i klikamy <i> Apply </i> w prawym dolnym rogu okna. Potem na kolejnym komunikacie akceptujemy listę i czekamy aż instalacja się zakończy.</p>
+<center> <h1> Środowisko deweloperskie - czyli gdzie pisać kod </h1> </center>
+<p>Oprogramowanie GIS udostępnia okna skryptowe w ramach programu. W nim można pisać kod Pythona.</p>
+<p>Co jednak zrobić by pisać w Pythonie poza oprogramowaniem GIS? Musimy uruchomić jakieś środowisko deweloperskie. Takie środowisko nazywa się <b> IDE </b> (ang. Integrated Development Environment). Jest to po prostu oprogramowanie, które służy do tworzenia i rozwijania kodu. Wiele firm oferuje różne środowiska, zarówno darmowe, jak również zaawanosowane płatne wersje.</p>
+<p>IDE umozliwia między innymi:</p>
+<ul>
+    <li>Szybką i wygodną edycję kodu</li>
+    <li>Debugowanie kodu (śledzenie wartości zmiennych, zatrzymywanie kodu w dowolnym miejscu)</li>
+    <li>Podpowiedzi nazw funkcji i zmiennych</li>
+    <li>Dynamiczne sprawdzanie składni</li>
+</ul>
+</section>
+</section>
+<section id="jupyter">
+<h2>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Jupyter Notebook to bardzo lekki, przeglądarkowy edytor kodu. Pozwala na tworzenie interaktywnych arkuszy mogących zawierać kod wykonywalny, opisy, tabele, wykresy i wiele innych danych, które służyć mogą nam między innymi do prezentacji wyników naszych prac. &lt;– Ten kurs tworzony i prowadzony jest właśnie w środowisku Jupyter Notebook.</p>
+<p>Jupyter Notebook pozwala na wykonywanie fragmentów kodu w komórkach notatnika oraz zapisanie wyników obliczeń czy wizualizacji danych. Dzięki temu całość znajduje się w jednym pliku i możemy łatwo prześledzić cały proces.</p>
+</section>
+<section id="google-colab">
+<h2>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Google Colaboratory (“Colab”) to notatnik (podobny do notatnika Jupyter), w którym można uruchamiać kod Pythona na Dysku Google na swoim koncie Google.</p>
+<p>Można tam pisać tekst, pisać kod, uruchamiać ten kod i wyświetlać dane wyjściowe - wszystko w tym samym notatniku.</p>
+<p><b>Korzyści z Google Colab:</b>
+Udostępnianie notatników jest tak proste, jak udostępnianie dowolnego dokumentu Google.</p>
+<p>Można używać języka Python na swoim Dysku Google, a konfiguracja zajmie mniej niż pięć minut.</p>
+<p>Ponieważ Python działa na serwerze (a nie w lokalnej przeglądarce lub na lokalnym komputerze), można z łatwością używać go gdziekolwiek i wykonywać interakcje ze źródłami zewnętrznymi np. z internetową bazą danych.</p>
+</section>
+<section id="pycharm">
+<h2>PyCharm<a class="headerlink" href="#pycharm" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Pycharm jest to bardzo rozbudowane środowisko pracy, które posiada olbrzymią liczbę funkcji oraz ułatwień programistycznych. Dostępny jest w wersji darmowej PyCharm Community oraz płatnej. Darmowa wersja jest wystarczająca do wielu zastosowań.</p>
+<p>PyCharm świetnie nadaje się do większych projektów programistycznych, takich jak np. tworzenie portali internetowych i własnych bibliotek programistycznych. Z drugiej strony nie jest to IDE które używamy przy analizie danych.</p>
+<p>Instalacja PyCharm (jest już w anacondzie):</p>
+<p><a class="reference external" href="https://www.jetbrains.com/pycharm/download/#section=windows">https://www.jetbrains.com/pycharm/download/#section=windows</a></p>
+<center><img src="https://origin2.cdn.componentsource.com/sites/default/files/styles/image_large/public/images/product_description/jetbrains/pycharm/img_484761.png?itok=fzUvDh7R"></center></section>
+<section id="spyder">
+<h2>Spyder<a class="headerlink" href="#spyder" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Spyder to klasyczne środowisko programistyczne, swoją budową i działaniem mocno wzorowane na RStudio, flagowym narzędziu programistów R.</p>
+<p>Posiada sporo opcji konfiguracyjnych (np. predefiniowany wygląd przypominający Matlab itp.), dzięki czemu odnajdą się w nim osoby posiadające doświadczenie z innymi językami programowania.</p>
+<center><img src="https://raw.githubusercontent.com/spyder-ide/spyder/5.x/img_src/screenshot.png"></center></section>
+<section id="co-wybrac">
+<h2>Co wybrać<a class="headerlink" href="#co-wybrac" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sumarycznie wybór IDE jest kwestią gustu</p></li>
+<li><p>W ramach kursu wykorzystujemy Jupyter Notebook</p></li>
+</ul>
+<h2> Najpopularniejsze bilbioteki </h2>
+<center>
+   <h2>Matplotlib</h2>
+<p>Wizualizacja danych, wykresy 2D, 3D</p>
+</center>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.jumpingrivers.com/blog/customising-matplotlib/matplot_title_logo.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://www.jumpingrivers.com/blog/customising-matplotlib/matplot_title_logo.png"/></div></div>
+</div>
+<center><h2> NumPy </h2></center>
+<p>Algebra liniowa, macierze</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1280px-NumPy_logo_2020.svg.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a5ac5b33b8b306224db3f1f292a76f9073417fc38370dece562dfb3b74184a72.png" src="_images/a5ac5b33b8b306224db3f1f292a76f9073417fc38370dece562dfb3b74184a72.png" />
+</div>
+</div>
+<center> <h2> Pandas </h2> </center>
+<p>Tabele, funkcjonalności bazy danych, grupowanie danych, sortowanie, przetwarzanie</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/2560px-Pandas_logo.svg.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0efcbf7b44dde087547163ea5288f7c4be664d2f71fda027eb0ab673a6216161.png" src="_images/0efcbf7b44dde087547163ea5288f7c4be664d2f71fda027eb0ab673a6216161.png" />
+</div>
+</div>
+<center> <h2> SciPy </h2> </center>
+<p>Wszelka analiza matematyczna</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;https://content.invisioncic.com/r273034/monthly_2017_02/scipy.png.c820f4b15ee7e011e913d61b4de42517.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/263cdcf64deeece17bf5b27db9824d8217fa5b9361c64b2c882bcf229f87e703.png" src="_images/263cdcf64deeece17bf5b27db9824d8217fa5b9361c64b2c882bcf229f87e703.png" />
+</div>
+</div>
+<center> <h2> Geopandas </h2> </center>
+<p>Analizy przestrzenne i operacje na danych przestrzennych</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;https://user-images.githubusercontent.com/36797143/87470122-3a6ba480-c614-11ea-9d16-cee94787410a.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/72fa64181879fbe3fd0e7e8c3bab4c60f60b74a28e90852de10893ae8fd7bebc.png" src="_images/72fa64181879fbe3fd0e7e8c3bab4c60f60b74a28e90852de10893ae8fd7bebc.png" />
+</div>
+</div>
+<center> <h1> Struktura kodu </h1> </center><h2> Abstrakcja </h2>
+<p>Klasa to zatem abstrakcja jakiejś funkcjonalności, np. klasa warstw wektorowych. Klasa opisuje ich ogólny charakter - atrybuty które mogą mieć (np. układ odniesienia) i funkcjonalności (np. edycję geometrii).</p>
+<p>Sama klasa to jedynie abstrakcja. Dopiero kiedy stworzymy lub dodamy warstwę wektorową do oprogramowania powstaje obiekt, który ma już zdefiniowane właściwości. Nazywamy to instancjonowaniem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Szkolenie_Python</span><span class="se">\\</span><span class="s2">Wyklad1</span><span class="se">\\</span><span class="s2">01-uml-base-class-and-object-explained.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:973,</span> in <span class="ni">MimeBundleFormatter.__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">973</span>         <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1022,</span> in <span class="ni">Image._repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span>     <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1022</span>     <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\01-uml-base-class-and-object-explained.png&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1032,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1054,</span> in <span class="ni">Image._repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\display.py:1034,</span> in <span class="ni">Image._data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1035</span>         <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;D:\Szkolenie_Python\Wyklad1\01-uml-base-class-and-object-explained.png&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<h2> Dziedziczenie </h2>
+<p>Klasy układane są w hierarchię, w której następuje dziedziczenie. zwala na przejęcie części cech i metod przez klasy wywodzące się z klas wyższego rzędu. Dzięki temu uzyskujemy funkcjonalności już istniejące, które możemy rozszerzyć i ewentualnie zmienić.</p>
+<p>Przykładowo możemy mieć hierarchię warstwa danych -&gt; warstwa wektorowa -&gt; warstwa punktowa</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="2.%20Szkolenie%20Python%20-%20funkcje%20wbudowane%2C%20zmienne%20i%20typy%20danych.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. Funkcje wbudowane, zmienne i typy danych</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.Wprowadzenie do Pythona</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wady-i-zalety-pythona">Wady i zalety Pythona</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zalety">Zalety</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dlaczego-o-tym-mowimy">Dlaczego o tym mówimy?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacja-pythona-na-komputerze">Instalacja Pythona na komputerze</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-po-instalacji-jak-uzywac-pythona">Co po instalacji - jak używać Pythona?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda-navigator">Anaconda Navigator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#srodowisko">Środowisko</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacja-rozszerzen">Instalacja rozszerzeń</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">PyCharm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder">Spyder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-wybrac">Co wybrać</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kamil Smolak, Paweł Bogusławski, Barbara Hordyniec, Adam Michalki, Natalia Wielgocka
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
