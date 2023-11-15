@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ćwiczenia 2. Funkcje wbudowane, zmienne i typy danych &#8212; Szkolenie Python 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Szkolenie_cw2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Złożone typy danych" href="3.%20Szkolenie%20Python%20-%20z%C5%82o%C5%BCone%20typy%20danych.html" />
+    <link rel="prev" title="2. Funkcje wbudowane, zmienne i typy danych" href="2.%20Szkolenie%20Python%20-%20funkcje%20wbudowane%2C%20zmienne%20i%20typy%20danych.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="1.%20Szkolenie%20Python%20-%20Wprowadzenie.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="1.%20Szkolenie%20Python%20-%20Wprowadzenie.html">
+                    1.Wprowadzenie do Pythona
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2.%20Szkolenie%20Python%20-%20funkcje%20wbudowane%2C%20zmienne%20i%20typy%20danych.html">2. Funkcje wbudowane, zmienne i typy danych</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ćwiczenia 2. Funkcje wbudowane, zmienne i typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.%20Szkolenie%20Python%20-%20z%C5%82o%C5%BCone%20typy%20danych.html">3. Złożone typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Szkolenie_cw3.html">Ćwiczenia 3. Złożone typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Szkolenie%20Python%20-%20kontrola%20przep%C5%82ywu.html">4. Kontrola przepływu</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Szkolenie_cw4.html">Ćwiczenia 4. Kontrola przepływu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.%20Szkolenie%20Python%20-%20funkcje%2C%20definicja%20funkcji%2C%20wyj%C4%85tki.html">5. Funkcje, definicja funkcji, wyjątki</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.%20Szkolenie%20Python%20-%20wczytywanie%20i%20zapisywanie%20plik%C3%B3w%2C%20operacje%20na%20strukutrze%20folder%C3%B3w%2C%20formatowanie%20tekstu.html">6. Wczytywanie i zapisywanie plików, operacje na strukutrze folderów, formatowanie tekstu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.%20Szkolenie%20Python%20-%20podstawy%20analizy%20danych%20tabelarycznych.html">7. Podstawy analiz danych tabelarycznych</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSzkolenie_cw2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Szkolenie_cw2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ćwiczenia 2. Funkcje wbudowane, zmienne i typy danych</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wyniki-zadan">Wyniki zadań:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="cwiczenia-2-funkcje-wbudowane-zmienne-i-typy-danych">
+<h1>Ćwiczenia 2. Funkcje wbudowane, zmienne i typy danych<a class="headerlink" href="#cwiczenia-2-funkcje-wbudowane-zmienne-i-typy-danych" title="Permalink to this heading">#</a></h1>
+<p>–</p>
+<hr class="docutils" />
+<section id="zad-1">
+<h2>Zad 1<a class="headerlink" href="#zad-1" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz dwie zmienne <code class="docutils literal notranslate"><span class="pre">a</span></code> o wartości <code class="docutils literal notranslate"><span class="pre">9</span></code> i <code class="docutils literal notranslate"><span class="pre">b</span></code> o wartości <code class="docutils literal notranslate"><span class="pre">3</span></code> i wyświetl wynik ich dodawania, odejmowania, mnożenia i dzielenia.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-2">
+<h2>Zad 2<a class="headerlink" href="#zad-2" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stórz dwie zmienne:</p>
+<ul class="simple">
+<li><p>pierwszą o nazwie <code class="docutils literal notranslate"><span class="pre">imie</span></code>, przypisz jej wartość typu tekstowego z Twoim imieniem</p></li>
+<li><p>drugą o nazwie <code class="docutils literal notranslate"><span class="pre">rok_urodzenia</span></code> i przypisz jej liczbę całkowitą</p></li>
+</ul>
+<p>Za pomocą funkcji ‘print’ wyświetl na ekran tekst “Mam na imię <code class="docutils literal notranslate"><span class="pre">zmienna</span> <span class="pre">1</span></code> i mam <code class="docutils literal notranslate"><span class="pre">zmienna</span> <span class="pre">2</span></code> lat”, gdzie <code class="docutils literal notranslate"><span class="pre">zmienna1</span></code> wyświetla imię, a <code class="docutils literal notranslate"><span class="pre">zmienna2</span></code> wiek obliczony jako różnica 2023 i roku urodzenia.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-3">
+<h2>Zad 3<a class="headerlink" href="#zad-3" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Oblicz pole koła o promieniu 12 na dwa sposoby:</p>
+<ul class="simple">
+<li><p>Poprzez stworzenie zmiennej o nazwie <code class="docutils literal notranslate"><span class="pre">pi</span></code> i wartości 3.14</p></li>
+<li><p>Poprzez zaimportowanie wartości pi z biblioteki math</p></li>
+</ul>
+<p>Oba wyniki wyświetl na ekran.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-4">
+<h2>Zad 4<a class="headerlink" href="#zad-4" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Wyświetl zmienną ‘pi’ z biblioteki math na ekranie na trzy sposoby:</p>
+<ul class="simple">
+<li><p>Przypisz wartość zmiennej ‘pi’ z biblioteki math do nowej zmiennej o nazwie ‘liczba_pi’</p></li>
+<li><p>Zaimportuj zmienną pi bezpośrednio do programu, bez deklaracji nowej zmiennej
+(2 sposoby)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-5">
+<h2>Zad 5<a class="headerlink" href="#zad-5" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz program, który przyjmuje zdanie (ciąg znaków) i znajduje długość najdłuższego słowa w tym zdaniu. Użyj funkcji wbudowanych <em>len</em> oraz <em>max</em> (nie ma konieczności korzystania z bibliotek zewnętrznych).</p>
+<p>Zmienna wejściowa:</p>
+<p>zdanie = “Python jest bardzo fascynujący! Zaczynam rozumieć o co tutaj chodzi.”</p>
+</section>
+<hr class="docutils" />
+<section id="zad-6">
+<h2>Zad 6<a class="headerlink" href="#zad-6" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zadeklaruj zmienną <code class="docutils literal notranslate"><span class="pre">x</span></code> o wartości <code class="docutils literal notranslate"><span class="pre">3.14</span></code>. Sprawdź typ zmiennej przechowującej liczbę zmiennoprzecinkową. Zmień typ zmiennej na tekstowy i wyświetl typ zmiennej ponownie.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-7">
+<h2>Zad 7<a class="headerlink" href="#zad-7" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz skrypt, który wykona następujące czynności:</p>
+<ul class="simple">
+<li><p>zmiennej <code class="docutils literal notranslate"><span class="pre">a</span></code> przypisze wartość podaną przez użytkownika np. <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+<li><p>zmiennej <code class="docutils literal notranslate"><span class="pre">b</span></code> przypisze wartość podaną przez użytkownika np. <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+<li><p>zmiennej <code class="docutils literal notranslate"><span class="pre">P</span></code> przypisze wartość <code class="docutils literal notranslate"><span class="pre">a*b</span></code></p></li>
+<li><p>wypisze na ekranie “Pole prostokąta o bokach <code class="docutils literal notranslate"><span class="pre">a</span></code> i <code class="docutils literal notranslate"><span class="pre">b</span></code> wynosi <code class="docutils literal notranslate"><span class="pre">P</span></code>.” (gdzie w miejsce zmiennych zostaną wstawione odpowiednie wartości).</p></li>
+</ul>
+<p>! Wykorzystaj funkcje <code class="docutils literal notranslate"><span class="pre">input</span></code> do wykonania tego ćwiczenia ! help(input)
+Zwróć uwagę jakiego typu zmienną zwraca funkcja input()</p>
+</section>
+<hr class="docutils" />
+<section id="zad-8">
+<h2>Zad 8<a class="headerlink" href="#zad-8" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz obiekt przechowujący inwokację Pana Tadeusza pod zmienną <code class="docutils literal notranslate"><span class="pre">inwokacja</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inwokacja</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Litwo! Ojczyzno moja! Ty jesteś jak zdrowie,</span>
+<span class="s2">Ile cię trzeba cenić, ten tylko się dowie,</span>
+<span class="s2">Kto cię stracił. Dziś piękność twą w całej ozdobie</span>
+<span class="s2">Widzę i opisuję, bo tęsknię po tobie</span>
+<span class="s2">Panno święta, co Jasnej bronisz Częstochowy</span>
+<span class="s2">I w Ostrej świecisz Bramie! Ty, co gród zamkowy</span>
+<span class="s2">Nowogródzki ochraniasz z jego wiernym ludem!</span>
+<span class="s2">Jak mnie dziecko do zdrowia powróciłaś cudem,</span>
+<span class="s2">Gdy od płaczącej matki pod Twoją opiekę</span>
+<span class="s2">Ofiarowany, martwą podniosłem powiekę</span>
+<span class="s2">I zaraz mogłem pieszo do Twych świątyń progu</span>
+<span class="s2">Iść za wrócone życie podziękować Bogu,</span>
+<span class="s2">Tak nas powrócisz cudem na Ojczyzny łono.</span>
+<span class="s2">Tymczasem przenoś moją duszę utęsknioną</span>
+<span class="s2">Do tych pagórków leśnych, do tych łąk zielonych,</span>
+<span class="s2">Szeroko nad błękitnym Niemnem rozciągnionych;</span>
+<span class="s2">Do tych pól malowanych zbożem rozmaitem,</span>
+<span class="s2">Wyzłacanych pszenicą, posrebrzanych żytem;</span>
+<span class="s2">Gdzie bursztynowy świerzop, gryka jak śnieg biała,</span>
+<span class="s2">Gdzie panieńskim rumieńcem dzięcielina pała,</span>
+<span class="s2">A wszystko przepasane jakby wstęgą, miedzą</span>
+<span class="s2">Zieloną, na niej z rzadka ciche grusze siedzą.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Popraw zmienną <code class="docutils literal notranslate"><span class="pre">inwokacja</span></code>, aby tekst zaczynał się małą literą (załóżmy że nie wiesz jaka to litera).</p></li>
+<li><p>Korzystając z funkcji <em>count</em> sprawdź, ile razy występuje spójnik “i”.</p></li>
+<li><p>Korzystając z funkcji <em>count</em> sprawdź, ile razy występuje litera “i” (niezależnie od wielkości).</p></li>
+<li><p>Sprawdź, czy słowo “dziecko” występuje w tekście</p></li>
+<li><p>Korzystając z funkcji <em>str.split</em>:</p>
+<ul>
+<li><p>stwórz listę wyrazów występujących w tekście (np. 30 słów =&gt; 30 elementów)</p></li>
+<li><p>stwórz listę, której każdy element odpowiada jednej linijce tekstu (4 linie =&gt; 4 elementy).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="wyniki-zadan">
+<h2>Wyniki zadań:<a class="headerlink" href="#wyniki-zadan" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p><b>Zad 1</b></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dodawanie</span><span class="p">:</span> <span class="mi">12</span>
+<span class="n">Odejmowanie</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">Mnożenie</span><span class="p">:</span> <span class="mi">27</span>
+<span class="n">Dzielenie</span><span class="p">:</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+<p><b>Zad 2</b></p>
+<p><em>Np.</em> Mam na imię Jan i mam 45 lat.</p>
+<p><b>Zad 3</b></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sposób</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">452.16</span>
+<span class="n">Sposób</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">452.3893421169302</span>
+</pre></div>
+</div>
+<p><b>Zad 4</b></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sposób</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">3.141592653589793</span>
+<span class="n">Sposób</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">3.141592653589793</span>
+<span class="n">Sposób</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">3.141592653589793</span>
+</pre></div>
+</div>
+<p><b>Zad 5</b></p>
+<p>Najdłuższe słowo to ‘fascynujący!’ o długości 12 znaków.</p>
+<p><b>Zad 6</b></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Typ zmiennej przed konwersją: {&lt;class &#39;float&#39;&gt;}
+Typ zmiennej po konwersji: {&lt;class &#39;str&#39;&gt;}
+</pre></div>
+</div>
+<p><b>Zad 7</b></p>
+<p><em>Np.</em> dla wartości 2 i 6, wynik wynosi 12</p>
+<p><b>Zad 8</b></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ile</span> <span class="n">razy</span> <span class="n">występuje</span> <span class="n">spójnik</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Ile</span> <span class="n">razy</span> <span class="n">występuje</span> <span class="n">litera</span> <span class="s1">&#39;i&#39;</span> <span class="p">(</span><span class="n">niezależnie</span> <span class="n">od</span> <span class="n">wielkości</span><span class="p">):</span> <span class="mi">66</span>
+<span class="n">Czy</span> <span class="n">słowo</span> <span class="s1">&#39;dziecko&#39;</span> <span class="n">występuje</span> <span class="n">w</span> <span class="n">tekście</span><span class="p">:</span> <span class="kc">True</span>
+
+
+<span class="n">Lista</span> <span class="n">wyrazów</span><span class="p">:</span>
+<span class="p">[</span><span class="s1">&#39;litwo!&#39;</span><span class="p">,</span> <span class="s1">&#39;Ojczyzno&#39;</span><span class="p">,</span> <span class="s1">&#39;moja!&#39;</span><span class="p">,</span> <span class="s1">&#39;Ty&#39;</span><span class="p">,</span> <span class="s1">&#39;jesteś&#39;</span><span class="p">,</span> <span class="s1">&#39;jak&#39;</span><span class="p">,</span> <span class="s1">&#39;zdrowie,&#39;</span><span class="p">,</span> <span class="s1">&#39;Ile&#39;</span><span class="p">,</span> <span class="s1">&#39;cię&#39;</span><span class="p">,</span> <span class="s1">&#39;trzeba&#39;</span><span class="p">,</span> <span class="s1">&#39;cenić,&#39;</span><span class="p">,</span> <span class="s1">&#39;ten&#39;</span><span class="p">,</span> <span class="s1">&#39;tylko&#39;</span><span class="p">,</span> <span class="s1">&#39;się&#39;</span><span class="p">,</span> <span class="s1">&#39;dowie,&#39;</span><span class="p">,</span> <span class="s1">&#39;Kto&#39;</span><span class="p">,</span> <span class="s1">&#39;cię&#39;</span><span class="p">,</span> <span class="s1">&#39;stracił.&#39;</span><span class="p">,</span> <span class="s1">&#39;Dziś&#39;</span><span class="p">,</span> <span class="s1">&#39;piękność&#39;</span><span class="p">,</span> <span class="s1">&#39;twą&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;całej&#39;</span><span class="p">,</span> <span class="s1">&#39;ozdobie&#39;</span><span class="p">,</span> <span class="s1">&#39;Widzę&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;opisuję,&#39;</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="s1">&#39;tęsknię&#39;</span><span class="p">,</span> <span class="s1">&#39;po&#39;</span><span class="p">,</span> <span class="s1">&#39;tobie&#39;</span><span class="p">,</span> <span class="s1">&#39;Panno&#39;</span><span class="p">,</span> <span class="s1">&#39;święta,&#39;</span><span class="p">,</span> <span class="s1">&#39;co&#39;</span><span class="p">,</span> <span class="s1">&#39;Jasnej&#39;</span><span class="p">,</span> <span class="s1">&#39;bronisz&#39;</span><span class="p">,</span> <span class="s1">&#39;Częstochowy&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;Ostrej&#39;</span><span class="p">,</span> <span class="s1">&#39;świecisz&#39;</span><span class="p">,</span> <span class="s1">&#39;Bramie!&#39;</span><span class="p">,</span> <span class="s1">&#39;Ty,&#39;</span><span class="p">,</span> <span class="s1">&#39;co&#39;</span><span class="p">,</span> <span class="s1">&#39;gród&#39;</span><span class="p">,</span> <span class="s1">&#39;zamkowy&#39;</span><span class="p">,</span> <span class="s1">&#39;Nowogródzki&#39;</span><span class="p">,</span> <span class="s1">&#39;ochraniasz&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;jego&#39;</span><span class="p">,</span> <span class="s1">&#39;wiernym&#39;</span><span class="p">,</span> <span class="s1">&#39;ludem!&#39;</span><span class="p">,</span> <span class="s1">&#39;Jak&#39;</span><span class="p">,</span> <span class="s1">&#39;mnie&#39;</span><span class="p">,</span> <span class="s1">&#39;dziecko&#39;</span><span class="p">,</span> <span class="s1">&#39;do&#39;</span><span class="p">,</span> <span class="s1">&#39;zdrowia&#39;</span><span class="p">,</span> <span class="s1">&#39;powróciłaś&#39;</span><span class="p">,</span> <span class="s1">&#39;cudem,&#39;</span><span class="p">,</span> <span class="s1">&#39;Gdy&#39;</span><span class="p">,</span> <span class="s1">&#39;od&#39;</span><span class="p">,</span> <span class="s1">&#39;płaczącej&#39;</span><span class="p">,</span> <span class="s1">&#39;matki&#39;</span><span class="p">,</span> <span class="s1">&#39;pod&#39;</span><span class="p">,</span> <span class="s1">&#39;Twoją&#39;</span><span class="p">,</span> <span class="s1">&#39;opiekę&#39;</span><span class="p">,</span> <span class="s1">&#39;Ofiarowany,&#39;</span><span class="p">,</span> <span class="s1">&#39;martwą&#39;</span><span class="p">,</span> <span class="s1">&#39;podniosłem&#39;</span><span class="p">,</span> <span class="s1">&#39;powiekę&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;zaraz&#39;</span><span class="p">,</span> <span class="s1">&#39;mogłem&#39;</span><span class="p">,</span> <span class="s1">&#39;pieszo&#39;</span><span class="p">,</span> <span class="s1">&#39;do&#39;</span><span class="p">,</span> <span class="s1">&#39;Twych&#39;</span><span class="p">,</span> <span class="s1">&#39;świątyń&#39;</span><span class="p">,</span> <span class="s1">&#39;progu&#39;</span><span class="p">,</span> <span class="s1">&#39;Iść&#39;</span><span class="p">,</span> <span class="s1">&#39;za&#39;</span><span class="p">,</span> <span class="s1">&#39;wrócone&#39;</span><span class="p">,</span> <span class="s1">&#39;życie&#39;</span><span class="p">,</span> <span class="s1">&#39;podziękować&#39;</span><span class="p">,</span> <span class="s1">&#39;Bogu,&#39;</span><span class="p">,</span> <span class="s1">&#39;Tak&#39;</span><span class="p">,</span> <span class="s1">&#39;nas&#39;</span><span class="p">,</span> <span class="s1">&#39;powrócisz&#39;</span><span class="p">,</span> <span class="s1">&#39;cudem&#39;</span><span class="p">,</span> <span class="s1">&#39;na&#39;</span><span class="p">,</span> <span class="s1">&#39;Ojczyzny&#39;</span><span class="p">,</span> <span class="s1">&#39;łono.&#39;</span><span class="p">,</span> <span class="s1">&#39;Tymczasem&#39;</span><span class="p">,</span> <span class="s1">&#39;przenoś&#39;</span><span class="p">,</span> <span class="s1">&#39;moją&#39;</span><span class="p">,</span> <span class="s1">&#39;duszę&#39;</span><span class="p">,</span> <span class="s1">&#39;utęsknioną&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;tych&#39;</span><span class="p">,</span> <span class="s1">&#39;pagórków&#39;</span><span class="p">,</span> <span class="s1">&#39;leśnych,&#39;</span><span class="p">,</span> <span class="s1">&#39;do&#39;</span><span class="p">,</span> <span class="s1">&#39;tych&#39;</span><span class="p">,</span> <span class="s1">&#39;łąk&#39;</span><span class="p">,</span> <span class="s1">&#39;zielonych,&#39;</span><span class="p">,</span> <span class="s1">&#39;Szeroko&#39;</span><span class="p">,</span> <span class="s1">&#39;nad&#39;</span><span class="p">,</span> <span class="s1">&#39;błękitnym&#39;</span><span class="p">,</span> <span class="s1">&#39;Niemnem&#39;</span><span class="p">,</span> <span class="s1">&#39;rozciągnionych;&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;tych&#39;</span><span class="p">,</span> <span class="s1">&#39;pól&#39;</span><span class="p">,</span> <span class="s1">&#39;malowanych&#39;</span><span class="p">,</span> <span class="s1">&#39;zbożem&#39;</span><span class="p">,</span> <span class="s1">&#39;rozmaitem,&#39;</span><span class="p">,</span> <span class="s1">&#39;Wyzłacanych&#39;</span><span class="p">,</span> <span class="s1">&#39;pszenicą,&#39;</span><span class="p">,</span> <span class="s1">&#39;posrebrzanych&#39;</span><span class="p">,</span> <span class="s1">&#39;żytem;&#39;</span><span class="p">,</span> <span class="s1">&#39;Gdzie&#39;</span><span class="p">,</span> <span class="s1">&#39;bursztynowy&#39;</span><span class="p">,</span> <span class="s1">&#39;świerzop,&#39;</span><span class="p">,</span> <span class="s1">&#39;gryka&#39;</span><span class="p">,</span> <span class="s1">&#39;jak&#39;</span><span class="p">,</span> <span class="s1">&#39;śnieg&#39;</span><span class="p">,</span> <span class="s1">&#39;biała,&#39;</span><span class="p">,</span> <span class="s1">&#39;Gdzie&#39;</span><span class="p">,</span> <span class="s1">&#39;panieńskim&#39;</span><span class="p">,</span> <span class="s1">&#39;rumieńcem&#39;</span><span class="p">,</span> <span class="s1">&#39;dzięcielina&#39;</span><span class="p">,</span> <span class="s1">&#39;pała,&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;wszystko&#39;</span><span class="p">,</span> <span class="s1">&#39;przepasane&#39;</span><span class="p">,</span> <span class="s1">&#39;jakby&#39;</span><span class="p">,</span> <span class="s1">&#39;wstęgą,&#39;</span><span class="p">,</span> <span class="s1">&#39;miedzą&#39;</span><span class="p">,</span> <span class="s1">&#39;Zieloną,&#39;</span><span class="p">,</span> <span class="s1">&#39;na&#39;</span><span class="p">,</span> <span class="s1">&#39;niej&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;rzadka&#39;</span><span class="p">,</span> <span class="s1">&#39;ciche&#39;</span><span class="p">,</span> <span class="s1">&#39;grusze&#39;</span><span class="p">,</span> <span class="s1">&#39;siedzą.&#39;</span><span class="p">]</span>
+
+<span class="n">Lista</span> <span class="n">linijek</span><span class="p">:</span>
+<span class="p">[</span><span class="s1">&#39;litwo! Ojczyzno moja! Ty jesteś jak zdrowie,&#39;</span><span class="p">,</span> <span class="s1">&#39;Ile cię trzeba cenić, ten tylko się dowie,&#39;</span><span class="p">,</span> <span class="s1">&#39;Kto cię stracił. Dziś piękność twą w całej ozdobie&#39;</span><span class="p">,</span> <span class="s1">&#39;Widzę i opisuję, bo tęsknię po tobie&#39;</span><span class="p">,</span> <span class="s1">&#39;Panno święta, co Jasnej bronisz Częstochowy&#39;</span><span class="p">,</span> <span class="s1">&#39;I w Ostrej świecisz Bramie! Ty, co gród zamkowy&#39;</span><span class="p">,</span> <span class="s1">&#39;Nowogródzki ochraniasz z jego wiernym ludem!&#39;</span><span class="p">,</span> <span class="s1">&#39;Jak mnie dziecko do zdrowia powróciłaś cudem,&#39;</span><span class="p">,</span> <span class="s1">&#39;Gdy od płaczącej matki pod Twoją opiekę&#39;</span><span class="p">,</span> <span class="s1">&#39;Ofiarowany, martwą podniosłem powiekę&#39;</span><span class="p">,</span> <span class="s1">&#39;I zaraz mogłem pieszo do Twych świątyń progu&#39;</span><span class="p">,</span> <span class="s1">&#39;Iść za wrócone życie podziękować Bogu,&#39;</span><span class="p">,</span> <span class="s1">&#39;Tak nas powrócisz cudem na Ojczyzny łono.&#39;</span><span class="p">,</span> <span class="s1">&#39;Tymczasem przenoś moją duszę utęsknioną&#39;</span><span class="p">,</span> <span class="s1">&#39;Do tych pagórków leśnych, do tych łąk zielonych,&#39;</span><span class="p">,</span> <span class="s1">&#39;Szeroko nad błękitnym Niemnem rozciągnionych;&#39;</span><span class="p">,</span> <span class="s1">&#39;Do tych pól malowanych zbożem rozmaitem,&#39;</span><span class="p">,</span> <span class="s1">&#39;Wyzłacanych pszenicą, posrebrzanych żytem;&#39;</span><span class="p">,</span> <span class="s1">&#39;Gdzie bursztynowy świerzop, gryka jak śnieg biała,&#39;</span><span class="p">,</span> <span class="s1">&#39;Gdzie panieńskim rumieńcem dzięcielina pała,&#39;</span><span class="p">,</span> <span class="s1">&#39;A wszystko przepasane jakby wstęgą, miedzą&#39;</span><span class="p">,</span> <span class="s1">&#39;Zieloną, na niej z rzadka ciche grusze siedzą.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2.%20Szkolenie%20Python%20-%20funkcje%20wbudowane%2C%20zmienne%20i%20typy%20danych.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2. Funkcje wbudowane, zmienne i typy danych</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3.%20Szkolenie%20Python%20-%20z%C5%82o%C5%BCone%20typy%20danych.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. Złożone typy danych</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wyniki-zadan">Wyniki zadań:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kamil Smolak, Paweł Bogusławski, Barbara Hordyniec, Adam Michalki, Natalia Wielgocka
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
