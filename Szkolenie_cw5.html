@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Notebooks with MyST Markdown &#8212; Szkolenie Python 2023</title>
+    <title>Ćwiczenia 5. Funkcje, definicja funkcji, wyjątki - ćwiczenia &#8212; Szkolenie Python 2023</title>
   
   
   
@@ -62,9 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown-notebooks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Szkolenie_cw5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Wczytywanie i zapisywanie plików, operacje na strukutrze folderów, formatowanie tekstu" href="6.%20Szkolenie%20Python%20-%20wczytywanie%20i%20zapisywanie%20plik%C3%B3w%2C%20operacje%20na%20strukutrze%20folder%C3%B3w%2C%20formatowanie%20tekstu.html" />
+    <link rel="prev" title="5. Funkcje, definicja funkcji, wyjątki" href="5.%20Szkolenie%20Python%20-%20funkcje%2C%20definicja%20funkcji%2C%20wyj%C4%85tki.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="2.%20Szkolenie%20Python%20-%20funkcje%20wbudowane%2C%20zmienne%20i%20typy%20danych.html">2. Funkcje wbudowane, zmienne i typy danych</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Szkolenie_cw2.html">Ćwiczenia 2. Funkcje wbudowane, zmienne i typy danych</a></li>
@@ -174,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="Szkolenie_cw4.html">Ćwiczenia 4. Kontrola przepływu - ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.%20Szkolenie%20Python%20-%20funkcje%2C%20definicja%20funkcji%2C%20wyj%C4%85tki.html">5. Funkcje, definicja funkcji, wyjątki</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Szkolenie_cw5.html">Ćwiczenia 5. Funkcje, definicja funkcji, wyjątki - ćwiczenia</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ćwiczenia 5. Funkcje, definicja funkcji, wyjątki - ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6.%20Szkolenie%20Python%20-%20wczytywanie%20i%20zapisywanie%20plik%C3%B3w%2C%20operacje%20na%20strukutrze%20folder%C3%B3w%2C%20formatowanie%20tekstu.html">6. Wczytywanie i zapisywanie plików, operacje na strukutrze folderów, formatowanie tekstu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Szkolenie_cw6.html">Ćwiczenia 6. Wczytywanie i zapisywanie plików, operacje na strukutrze folderów, formatowanie tekstu - ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7.%20Szkolenie%20Python%20-%20podstawy%20analizy%20danych%20tabelarycznych.html">7. Podstawy analiz danych tabelarycznych</a></li>
@@ -249,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown-notebooks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSzkolenie_cw5.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -279,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/markdown-notebooks.md" target="_blank"
+      <li><a href="_sources/Szkolenie_cw5.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -361,7 +363,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Notebooks with MyST Markdown</h1>
+    <h1>Ćwiczenia 5. Funkcje, definicja funkcji, wyjątki - ćwiczenia</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -371,9 +373,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10">Zad 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11">Zad 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12">Zad 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13">Zad 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14">Zad 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-15">Zad 15</a></li>
 </ul>
             </nav>
         </div>
@@ -385,50 +399,121 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
-<h1>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this heading">#</a></h1>
-<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.</p>
-<section id="an-example-cell">
-<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this heading">#</a></h2>
-<p>With MyST Markdown, you can define code cells with a directive like so:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+  <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="cwiczenia-5-funkcje-definicja-funkcji-wyjatki-cwiczenia">
+<h1>Ćwiczenia 5. Funkcje, definicja funkcji, wyjątki - ćwiczenia<a class="headerlink" href="#cwiczenia-5-funkcje-definicja-funkcji-wyjatki-cwiczenia" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<hr class="docutils" />
+<section id="zad-1">
+<h2>Zad 1<a class="headerlink" href="#zad-1" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz funkcję, która przyjmuje listę liczb i zwraca ich średnią arytmetyczną.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-2">
+<h2>Zad 2<a class="headerlink" href="#zad-2" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję, która przyjmuje dwie liczby i zwraca pierwszą liczbę podniesioną do potęgi drugiej.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-3">
+<h2>Zad 3<a class="headerlink" href="#zad-3" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz funkcję, która obsługuje błąd dzielenia przez zero i zwraca komunikat o błędzie.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-4">
+<h2>Zad 4<a class="headerlink" href="#zad-4" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję, która sprawdza, czy dany tekst jest palindromem. Sprawdź kod na tekście:</p>
+<p>tekst = “może jutro ta dama da tortu jeżom”</p>
+</section>
+<hr class="docutils" />
+<section id="zad-5">
+<h2>Zad 5<a class="headerlink" href="#zad-5" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję policz_litery(tekst), która przyjmuje tekst (ciąg znaków) i zwraca słownik, w którym kluczami są poszczególne litery, a wartościami liczba ich wystąpień w tekście. Ignoruj wielkość liter, tj. traktuj “A” i “a” jako to samo.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-6">
+<h2>Zad 6<a class="headerlink" href="#zad-6" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz program rozwiązujący równanie kwadratowe (ax^2 + bx + c = 0) dla dowolnych a, b i c.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-7">
+<h2>Zad 7<a class="headerlink" href="#zad-7" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz funkcję, która odwraca kolejność elementów w liście bez użycia funkcji reverse lub [::-1].</p>
+</section>
+<hr class="docutils" />
+<section id="zad-8">
+<h2>Zad 8<a class="headerlink" href="#zad-8" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję w języku Python, która przyjmuje ciąg znaków i liczy liczbę wielkich i małych liter.
+Przykładowy ciąg znaków: ‘Ala ma kota, który nazywa się Rudy Wąsik’.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-9">
+<h2>Zad 9<a class="headerlink" href="#zad-9" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zadanie: Konwerter jednostek
+Napisz funkcję, która konwertuje jednostki (np. mile na kilometry, stopnie Celsjusza na Fahrenheita).
+Stwórz pętlę, w której użytkownik wybiera rodzaj konwersji i podaje wartość do przeliczenia.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-10">
+<h2>Zad 10<a class="headerlink" href="#zad-10" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz funkcję, która przyjmuje dowolna ilość słowników jako argumenty, a następnie łączy je i zwraca jeden połączony słownik. Żaden element nie może zostać utracony. Do zduplikowanych kluczy dodaj przyrostek „_n”, gdzie n to numer powtórzenia.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dict1 = {‘Kasia’: 3, ‘Basia’: 3, ‘Zosia’: 10}
+dict2 = {‘Kasia’: 3}
+dict3 = {‘Kasia’: 6, ‘Zosia’: 8, ‘Paweł’: 4}
+
+polaczonySlownik = laczenieSlownikow(dict1,dict2,dict3)
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<p>Oczekiwana wartość zmiennej polaczonySlownik</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{‘Kasia’: 3, ‘Basia’: 3, ‘Zosia’: 10, ‘Kasia_1’: 3, ‘Kasia_2’: 6, ‘Zosia_1’: 8, ‘Paweł’: 4}
 </pre></div>
-</div>
-</div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
 </div>
 </section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this heading">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="arabic simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
+<hr class="docutils" />
+<section id="zad-11">
+<h2>Zad 11<a class="headerlink" href="#zad-11" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz program symulujący koszyk zakupowy. Użytkownik powinien móc dodawać produkty do koszyka, a program powinien obliczać łączną wartość zamówienia. Wykorzystaj funkcję do obsługi koszyka.</p>
 </section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this heading">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
+<hr class="docutils" />
+<section id="zad-12">
+<h2>Zad 12<a class="headerlink" href="#zad-12" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz program pobierający od użytkownika liczbę całkowitą dodatnią. W przypadku podania liczby ujemnej lub zera, program prosi o podanie nowej wartości. Całość kończy się w momencie wprowadzenia liczby dodatniej.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-13">
+<h2>Zad 13<a class="headerlink" href="#zad-13" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz program wypisujący wszystkie kwadraty liczb naturalnych mniejsze od liczby podanej przez użytkownika.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-14">
+<h2>Zad 14<a class="headerlink" href="#zad-14" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Za pomocą pętli <em>while</em> utwórz następujący wzór:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">*</span>  
+   <span class="o">***</span>
+  <span class="o">*****</span>
+   <span class="o">***</span>
+    <span class="o">*</span>
 </pre></div>
 </div>
+</section>
+<hr class="docutils" />
+<section id="zad-15">
+<h2>Zad 15<a class="headerlink" href="#zad-15" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz kod, który podaje indeks na którym zaczyna się słowo w ciągu znaków. Na przykład, sprawdzając gdzie zaczyna się słowo “nie” w ciągu znaków “niebieski” kod powinien zwrócić 0. Jeśli słowa nie ma, podaje indeks -1</p>
 </section>
 </section>
 
@@ -462,6 +547,24 @@ See the YAML at the top of this page for example.</p></li>
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="5.%20Szkolenie%20Python%20-%20funkcje%2C%20definicja%20funkcji%2C%20wyj%C4%85tki.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5. Funkcje, definicja funkcji, wyjątki</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="6.%20Szkolenie%20Python%20-%20wczytywanie%20i%20zapisywanie%20plik%C3%B3w%2C%20operacje%20na%20strukutrze%20folder%C3%B3w%2C%20formatowanie%20tekstu.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6. Wczytywanie i zapisywanie plików, operacje na strukutrze folderów, formatowanie tekstu</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -477,9 +580,21 @@ See the YAML at the top of this page for example.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10">Zad 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11">Zad 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12">Zad 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13">Zad 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14">Zad 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-15">Zad 15</a></li>
 </ul>
   </nav></div>
 
