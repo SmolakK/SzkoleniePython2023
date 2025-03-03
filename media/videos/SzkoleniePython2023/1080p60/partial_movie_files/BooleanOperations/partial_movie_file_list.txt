@@ -1,0 +1,11 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/450974505_3064216276_223132457.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_3025429238_3550129470.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_2842765032_1167830360.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_1905319645_3424254546.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_2113382249_1821209243.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_4229609318_1707328238.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_783320626_3476692325.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_359488837_2647603531.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_1598548355_2342164884.mp4'
+file 'file:D:/GitHub/SzkoleniePython2023/media/videos/SzkoleniePython2023/1080p60/partial_movie_files/BooleanOperations/34786186_3023951634_3779770441.mp4'
