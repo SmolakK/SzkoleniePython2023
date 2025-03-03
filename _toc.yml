@@ -2,11 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: 1. Szkolenie Python - Wprowadzenie
+root: 1. Informatyka Geodezyjna 2025
 chapters:
-- file: 2. Szkolenie Python - funkcje wbudowane, zmienne i typy danych
-- file: 3. Szkolenie Python - złożone typy danych
-- file: 4. Szkolenie Python - kontrola przepływu
-- file: 5. Szkolenie Python - funkcje, definicja funkcji, wyjątki
-- file: 6. Szkolenie Python - podstawy analizy danych tabelarycznych
-- file: 7. Szkolenie Python - wczytywanie i zapisywanie plików, operacje na strukutrze folderów, formatowanie tekstu
+- file: 2. Informatyka Geodezyjna 2025
+- file: 3. Informatyka Geodezyjna 2025
+- file: 4. Informatyka Geodezyjna 2025

@@ -1,0 +1,658 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 1) &#8212; Informatyka Geodezyjna 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2. Informatyka Geodezyjna 2025';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 2)" href="3.%20Informatyka%20Geodezyjna%202025.html" />
+    <link rel="prev" title="1. Informatyka Geodezyjna - repetytorium Python" href="1.%20Informatyka%20Geodezyjna%202025.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="1.%20Informatyka%20Geodezyjna%202025.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="1.%20Informatyka%20Geodezyjna%202025.html">
+                    1. Informatyka Geodezyjna - repetytorium Python
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.%20Informatyka%20Geodezyjna%202025.html">3. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Informatyka%20Geodezyjna%202025.html">4. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 3)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2. Informatyka Geodezyjna 2025.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/2. Informatyka Geodezyjna 2025.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 1)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-klas">Diagram klas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#czym-jest-uml">1. Czym jest UML?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-klas-uml">2. Diagram Klas UML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podstawowy-diagram-klasy">2.1. Podstawowy diagram klasy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modyfikatory-dostepu">2.2. Modyfikatory dostępu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacje-miedzy-klasami">3. Relacje między klasami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dziedziczenie-generalizacja">3.1. Dziedziczenie (Generalizacja)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asocjacja">3.2. Asocjacja</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregacja-slaba-zaleznosc">3.3. Agregacja (Słaba zależność)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompozycja-silna-zaleznosc">3.4. Kompozycja (Silna zależność)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podsumowanie">Podsumowanie</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego-czesc-1">
+<h1>2. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 1)<a class="headerlink" href="#informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego-czesc-1" title="Permalink to this heading">#</a></h1>
+<h2> Python jest językiem obiektowym </h2>
+<p>Języki programowania można również podzielić na:</p>
+<ul>
+    <li> Strukturalne </li>
+    <li> Obiektowe </li>
+</ul>
+<p>W programowaniu strukturalnym dzielimy funkcjonalności na moduły (podprogramy).</p>
+<p>W programowaniu obiektowym tworzymy <b> obiekty </b>, każdy z nich ma własne działania (metody) oraz właściwości (atrybuty). Z założenia, mają reprezentować elementy świata rzeczywistego.</p>
+<p>W Pythonie można pisać kod w obu z tych podejść, choć jest on nastawiony na programowanie obiektowe.</p>
+<img src="bell_fig5.jpg"/>
+<h1>Klasy</h1>
+Żeby zrozumieć istotę działania metod i ich różność od funkcji oraz atrybutów, przyjrzyjmy się czym jest obiekt.
+<p>Obiekt to <b>wszystko</b> co napiszemy w Pythonie. To zarówno klasy jak i funkcje.</p>
+<p>Spotkamy się z metodami przypisanymi do klas. Klasa to bardzo ważny element języków obiektowych.</p>
+<h2>Czym zatem jest klasa?</h2>
+<p><b>Klasa</b> to <i>abstrakcja</i> pewnego obiektu. Oznacza to uogólnieniony opis pewnego elementu, który zdefiniowany jest przez taką klasę poprzez określenie jego typowych <b>cech (atrybutów) i operacji (metod), które można na nim wykonać</b>. Tą samą strukturą opisujemy elementy świata rzeczywistego.</p>
+<p>Przykład obrazujący:</p>
+<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
+Ma cechy (atrybuty):</p>
+<ul>
+    <li>Składniki</li>
+    <li>Sos</li>
+</ul>
+<p>Oraz metody:</p>
+<ul>
+    <li>Jedz</li>
+    <li>Polej oliwą</li>
+</ul><h1>Instancja</h1>
+<p>To praktyczna realizacja klasy.</p>
+<p>Kontynuując przykład obrazujący:</p>
+<p>Piekąc pizzę nadajemy jej atrybuty - składniki (pieczarki, ser) i sos (pomidorowy). Wtedy otrzymujemy <b> instancję</b> klasy pizza w postaci <i>pizzy funghi</i>.</p>
+<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
+Ma cechy (atrybuty):</p>
+<ul>
+    <li>Składniki = [pieczarki, ser]</li>
+    <li>Sos = pomidorowy</li>
+</ul>
+<p>Teraz możemy wywołać metodę na naszej instancji, która zdefiniowana już jest w klasie:</p>
+<p>pizza_funghi.jedz()</p>
+<img src="01-uml-base-class-and-object-explained.png"/><p>Przepis na danie jest odpowiednikiem KLASY, czyli abstrakcyjnego pojęcie określającego cechy i metody danego obiektu.</p>
+<p>Upieczona pizza hawajska (albo inna) jest odpowiednikiem INSTANCJI KLASY, czyli praktycznej realizacji klasy - nie jest abstrakcyjna, posiada cechy (atrybuty). Jest to też obiekt.</p>
+<p>Proces tworzenia obiektu z klasy nazywa się INSTANCJONOWANIEM.</p>
+<p>Poniżej drugi przykład z abstrakcyjnym pojęciem PSA:</p>
+<p>Abstrakcyjna klasa PIES - ma atrybuty:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Kolor
+Kolor oczu
+Wysokość
+Długość
+Waga
+</pre></div>
+</div>
+<p>I metody:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usiądź
+Połóż się
+Machaj ogonem
+Przyjść
+</pre></div>
+</div>
+<p>A Bobby jest praktyczną realizacją, ma te same metody i ma nadane chechy.</p>
+<p>Klasy mogą dziedziczyć cechy (jeden z paradygmatów). Tu wyróżniamy <b> klasy nadrzędne </b> i <b> klasy podrzędne </b>. Poniżej przykład:</p>
+<img src="Image5905.gif"/><p>Powyżej widzimy diagram klas UML (zaznajomicie się z nim za chwilę)</p>
+<p><em>Klasa nadrzędna</em> - Osoba, posiada atrybuty - imię, nazwisko, data urodzenia oraz metodę policz wiek</p>
+<p><em>Klasa dziedzicząca (podrzędna)</em> - Pracownik, posiada atrybuty pensja, stanowisko oraz wszystkie metody klasy nadrzędnej (imię, nazwisko, data urodzenia) oraz metody zmień pensję i policz wiek.</p>
+<p><em>Klasa IPracownik jest interfejsem</em> - jeszcze jednym elementem realizującym paradygmat programowania obiektowego - hermetyzacji/enkapsulacji - stanowi interfejs operujący na cechach pracownika, czyli jest pośrednikiem dokonującym zmiany w instancjach klasy Pracownik. Interfejs ma za zadanie kontrolować zmiany i ograniczać pożądane ingerencję w cechy instancji klas.</p>
+<p>Klasy pozwalają na realizację wszystkich czterech paradygmatów programowania obiektowego. Diagram klas UML jak powyżej może zostać przeniesiony i zaimplementowany w Pythonie.</p>
+<section id="diagram-klas">
+<h2>Diagram klas<a class="headerlink" href="#diagram-klas" title="Permalink to this heading">#</a></h2>
+<p>Wykorzystajmy powyższy diagram klas by zrozumieć czym są klasy i jakie są między nimi zależności</p>
+<section id="czym-jest-uml">
+<h3>1. Czym jest UML?<a class="headerlink" href="#czym-jest-uml" title="Permalink to this heading">#</a></h3>
+<p>UML (Unified Modeling Language) to język graficzny używany do modelowania systemów informatycznych. Diagramy UML pomagają wizualizować strukturę i zachowanie systemów, a jednym z najczęściej stosowanych jest <strong>diagram klas</strong>.</p>
+</section>
+</section>
+<section id="diagram-klas-uml">
+<h2>2. Diagram Klas UML<a class="headerlink" href="#diagram-klas-uml" title="Permalink to this heading">#</a></h2>
+<p>Diagram klas przedstawia strukturę systemu poprzez wizualizację klas, ich atrybutów, metod oraz relacji między nimi.</p>
+<section id="podstawowy-diagram-klasy">
+<h3>2.1. Podstawowy diagram klasy<a class="headerlink" href="#podstawowy-diagram-klasy" title="Permalink to this heading">#</a></h3>
+<p>Każda klasa jest reprezentowana jako prostokąt podzielony na trzy sekcje:</p>
+<ul class="simple">
+<li><p><strong>Pierwsza sekcja</strong> zawiera <strong>nazwę klasy</strong>.</p></li>
+<li><p><strong>Druga sekcja</strong> zawiera <strong>atrybuty</strong> klasy (cechy/zmienne).</p></li>
+<li><p><strong>Trzecia sekcja</strong> zawiera <strong>metody</strong> klasy (operacje).</p></li>
+</ul>
+</section>
+<section id="modyfikatory-dostepu">
+<h3>2.2. Modyfikatory dostępu<a class="headerlink" href="#modyfikatory-dostepu" title="Permalink to this heading">#</a></h3>
+<p>Każdy atrybut i metoda może mieć modyfikator dostępu:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">+</span></code> (public)</strong> – dostępne wszędzie.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">-</span></code> (private)</strong> – dostępne tylko wewnątrz klasy.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">#</span></code> (protected)</strong> – dostępne w klasie i jej podklasach.</p></li>
+</ul>
+</section>
+</section>
+<section id="relacje-miedzy-klasami">
+<h2>3. Relacje między klasami<a class="headerlink" href="#relacje-miedzy-klasami" title="Permalink to this heading">#</a></h2>
+<p>Diagram UML dla klas może przedstawiać różne typy relacji między obiektami:</p>
+<section id="dziedziczenie-generalizacja">
+<h3>3.1. Dziedziczenie (Generalizacja)<a class="headerlink" href="#dziedziczenie-generalizacja" title="Permalink to this heading">#</a></h3>
+<p>Reprezentuje hierarchię klas – klasa podrzędna dziedziczy cechy i metody klasy nadrzędnej.<br />
+<strong>Symbol:</strong> Pusty trójkąt skierowany w stronę klasy nadrzędnej. ▲</p>
+</section>
+<section id="asocjacja">
+<h3>3.2. Asocjacja<a class="headerlink" href="#asocjacja" title="Permalink to this heading">#</a></h3>
+<p>Reprezentuje związek między dwiema klasami. Może być jednostronna lub dwustronna.</p>
+</section>
+<section id="agregacja-slaba-zaleznosc">
+<h3>3.3. Agregacja (Słaba zależność)<a class="headerlink" href="#agregacja-slaba-zaleznosc" title="Permalink to this heading">#</a></h3>
+<p>Obiekt jednej klasy może istnieć niezależnie od drugiej klasy. <strong>Symbol:</strong> Pusty romb.</p>
+</section>
+<section id="kompozycja-silna-zaleznosc">
+<h3>3.4. Kompozycja (Silna zależność)<a class="headerlink" href="#kompozycja-silna-zaleznosc" title="Permalink to this heading">#</a></h3>
+<p>Obiekt klasy zawieranej <strong>nie może istnieć</strong> bez klasy nadrzędnej. <strong>Symbol:</strong> Wypełniony romb.</p>
+</section>
+<section id="podsumowanie">
+<h3>Podsumowanie<a class="headerlink" href="#podsumowanie" title="Permalink to this heading">#</a></h3>
+<p>Diagramy UML dla klas reprezentują obiektowy sposób modelowania struktury systemów. Te struktury, przedstawione w UML mogą być zaimplementowane z powodzeniem w języku obiektowym, takim jak <b> Python </b>.</p>
+<p>Najważniejsze elementy diagramów UML:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Klasy z atrybutami i metodami.
+Relacje: dziedziczenie, asocjacja, agregacja, kompozycja.
+Modyfikatory dostępu regulujące dostęp do danych.
+</pre></div>
+</div>
+<p>Dzięki UML programiści i analitycy mogą lepiej planować i komunikować strukturę systemu przed jego implementacją.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1.%20Informatyka%20Geodezyjna%202025.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Informatyka Geodezyjna - repetytorium Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3.%20Informatyka%20Geodezyjna%202025.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 2)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-klas">Diagram klas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#czym-jest-uml">1. Czym jest UML?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-klas-uml">2. Diagram Klas UML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podstawowy-diagram-klasy">2.1. Podstawowy diagram klasy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modyfikatory-dostepu">2.2. Modyfikatory dostępu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacje-miedzy-klasami">3. Relacje między klasami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dziedziczenie-generalizacja">3.1. Dziedziczenie (Generalizacja)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asocjacja">3.2. Asocjacja</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregacja-slaba-zaleznosc">3.3. Agregacja (Słaba zależność)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompozycja-silna-zaleznosc">3.4. Kompozycja (Silna zależność)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podsumowanie">Podsumowanie</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Przemysław Tymków, Kamil Smolak, Małgorzata Jarząbek-Rychard, Paweł Bogusławski
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
